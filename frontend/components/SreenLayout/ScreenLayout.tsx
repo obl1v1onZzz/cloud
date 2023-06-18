@@ -16,7 +16,6 @@ export const ScreenLayout: React.FC<IProps> = ({ service, savedData }) => {
 	const onClick = useCallback(() => {
 		send('submit');
 	}, [send]);
-	console.log(savedData);
 	const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const data: string = e.target.value;
 		if (!data) setValue(data);

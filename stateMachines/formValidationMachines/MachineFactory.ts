@@ -90,7 +90,7 @@ const addNewField = (ctx: FormMachineContext, event: IEvents) => {
 };
 const deleteField = (ctx: FormMachineContext, event: IEvents) => {
 	if (event.type == EVENTS.REMOVE_FIELD) {
-		return ctx.fields.filter((field, i) => field.field !== event.field);
+		return ctx.fields.filter((field) => field.field !== event.field);
 	}
 	return ctx.fields;
 };
@@ -108,7 +108,7 @@ const normalizeFields = (ctx: FormMachineContext, event: IEvents) => {
 	}
 	return ctx.data;
 };
-const validateFields = (ctx: FormMachineContext, event: IEvents) => {
+const validateFields = (ctx: FormMachineContext) => {
 	return ctx.fields.reduce((acc, el) => {
 		const userData = ctx.data[el.field];
 		if (el.validator(userData).result) return true && acc;
@@ -156,8 +156,8 @@ export const formMachineFactory = (fields: IField[]) => {
 					},
 					[EVENTS.SUBMIT]: [
 						{
-							cond: (ctx, event) => {
-								return !validateFields(ctx, event);
+							cond: (ctx) => {
+								return !validateFields(ctx);
 							},
 							target: STATES.DATA_ENTRY_ERROR,
 						},

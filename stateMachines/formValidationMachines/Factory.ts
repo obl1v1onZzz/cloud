@@ -1,6 +1,4 @@
-import { Advanteges } from './../../frontend/components/Steps/Advanteges/Advanteges';
 import {
-	checkBoxValidator,
 	emailValidator,
 	nameValidator,
 	nickNameValidator,
@@ -57,10 +55,6 @@ export const advantegesMachineForm = formMachineFactory([
 	{
 		field: ADVANTEGES_FIELDS.ADV3,
 		validator: nickNameValidator,
-	},
-	{
-		field: ADVANTEGES_FIELDS.CHECKBOX,
-		validator: checkBoxValidator,
 	},
 ]);
 export const getAdvantegesNewFieldName = (ctx: FormMachineContext) => {

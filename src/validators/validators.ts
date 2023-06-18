@@ -2,13 +2,13 @@ import { IFormFieldValidationResult } from '../../stateMachines/formValidationMa
 // all lang?????
 const onlyLettersAndNumbers = /^[\p{L}\p{N}]+$/gu;
 const onlyLetters = /^[\p{L}]+$/gu;
-export const textAreaRegExp = /[\p{L}\p{RGI_Emoji}\p{N}\p{M}\p{P}\p{S}]/gv;
+export const textAreaRegExp = /[\p{L}\p{Emoji}\p{N}\p{M}\p{P}\p{S}]/gu;
 
 export const nickNameValidator = (value: any): IFormFieldValidationResult => {
 	if (typeof value !== 'string' || value.length > 10 || value.length < 5)
 		return {
 			result: false,
-			errorMessage: 'Nickname max length 30',
+			errorMessage: 'Nickname max len 10 and min len 5',
 		};
 	if (!value.match(onlyLettersAndNumbers)?.length) {
 		return {
@@ -55,7 +55,7 @@ export const surnameValidator = (value: any): IFormFieldValidationResult => {
 };
 export const phoneValidator = (value: string): IFormFieldValidationResult => {
 	debugger;
-	const allowedChars = new RegExp(/[\p{Nd}]+&/gv);
+	const allowedChars = new RegExp(/[\p{Nd}]+&/gu);
 	if (value.match(allowedChars)?.length === 11) {
 		return {
 			result: false,
@@ -93,10 +93,6 @@ export const advantegesFieldValidator = (value: string): IFormFieldValidationRes
 	return {
 		result: true,
 	};
-};
-
-export const checkBoxValidator = (value: any): IFormFieldValidationResult => {
-	return { result: true };
 };
 
 export const textAreaValidator = (value: string): IFormFieldValidationResult => {

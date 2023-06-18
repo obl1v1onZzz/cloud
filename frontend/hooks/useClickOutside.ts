@@ -1,6 +1,6 @@
-import { RefObject, useEffect, useRef } from 'react';
+import { RefObject, useEffect } from 'react';
 
-export const useClickOutside = (ref: RefObject<HTMLDivElement>, handler: () => void) => {
+export const useClickOutside = (ref: RefObject<HTMLElement>, handler: () => void) => {
 	useEffect(() => {
 		const handlerClick = (e) => {
 			if (ref.current?.contains(e.target)) handler();

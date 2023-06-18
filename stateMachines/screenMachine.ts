@@ -1,7 +1,6 @@
 import { AnyEventObject, assign, createMachine, spawn } from 'xstate';
-import { aboutScreen, advantegesMachineForm, baseInfoMachineForm, mainScreen } from './formValidationMachines/Factory';
-import { FormMachineContext, IEvents } from './formValidationMachines/MachineFactory';
 import { submitForm } from '../src/request/request';
+import { aboutScreen, advantegesMachineForm, baseInfoMachineForm, mainScreen } from './formValidationMachines/Factory';
 
 export enum steps {
 	BASE_INFO = 'baseInfo',
@@ -22,10 +21,7 @@ export interface IStateSchema {
 		success: {};
 	};
 }
-enum PAGES {
-	MAIN = '/',
-	FORM = '/create',
-}
+
 export type TMachineContext = {
 	stepsCount: number;
 	path: string;
@@ -131,7 +127,7 @@ export const mainScreenMachine = createMachine<TMachineContext, AnyEventObject, 
 					target: 'advantages',
 					actions: assign({
 						stepsCount: increaseCountStep,
-						formsData: (ctx, event) => {
+						formsData: (_, event) => {
 							return {
 								[steps.BASE_INFO]: event.formsData,
 							};

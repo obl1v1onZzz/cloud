@@ -1,0 +1,11 @@
+.link{
+    line-height: 16px;
+    font-size: 12px;
+    color: #5558FA;
+    text-decoration: none;
+    margin-left: 4px;
+}
+.container {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,80 @@
+.wrapper {
+	width: 100%;
+	height: 700px;
+	padding: 24px;
+}
+.avatar {
+	background: #d5e4f7;
+	border-radius: 100px;
+	width: 80px;
+	height: 80px;
+	position: relative;
+}
+.in {
+	position: absolute;
+	left: calc(50% - 59px / 2 + 0.5px);
+	top: calc(50% - 56px / 2);
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 52px;
+	color: #212830;
+}
+
+.aboutme {
+	margin-bottom: 40px;
+	align-items: center;
+	display: flex;
+}
+.content {
+	margin-left: 24px;
+}
+.fullName {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 26px;
+	margin-bottom: 8px;
+}
+.social_links {
+	display: flex;
+}
+.social_links :not(:first-child) {
+	margin-left: 8px;
+}
+.container {
+	display: flex;
+	align-items: center;
+}
+.divider {
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	margin-bottom: 24px;
+}
+.about_me_data {
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+}
+.label {
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	margin-bottom: 8px;
+}
+button {
+	box-shadow: none;
+	border: none;
+}
+.button_start {
+	width: 79px;
+	height: 44px;
+	background: #5558fa;
+	border-radius: 4px;
+	font-weight: 400;
+	font-size: 14px;
+	color: #ffffff;
+	line-height: 20px;
+}
+.button_start:hover {
+	cursor: pointer;
+}

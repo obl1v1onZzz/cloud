@@ -1,0 +1,18 @@
+.textArea {
+	resize: none;
+	width: 100%;
+	display: block;
+	height: 84px;
+}
+.label {
+	margin-bottom: 8px;
+	font-size: 14px;
+	line-height: 20px;
+}
+.text_area_container {
+	margin-bottom: 88px;
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}

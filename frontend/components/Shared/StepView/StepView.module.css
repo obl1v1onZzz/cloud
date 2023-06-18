@@ -1,0 +1,84 @@
+.box {
+	max-width: 800px;
+	display: flex;
+	position: relative;
+}
+.circle {
+	width: 16px;
+	height: 16px;
+	border-radius: 100px;
+	background-color: #a6a6a6;
+	z-index: 1;
+	position: relative;
+}
+.circle_name {
+	position: absolute;
+	left: 50%;
+	top: 150%;
+	transform: translate(-50%, -50%);
+}
+.steps_number {
+	display: flex;
+	width: 100%;
+	position: absolute;
+}
+.done {
+	position: relative;
+	background-color: #5558fa;
+}
+.done::after {
+	content: '';
+	width: 10px;
+	height: 9px;
+	background-image: url('./Vector.svg');
+	position: absolute;
+	background-repeat: no-repeat;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.current {
+	position: relative;
+	background-color: #5558fa;
+}
+.current::after {
+	content: '';
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: #fff;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.steps {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.progress {
+	background: rgba(0, 0, 0, 0.08);
+	border-radius: 8px;
+	width: 100%;
+	position: absolute;
+	height: 8px;
+	content: '';
+	display: block;
+	top: 5;
+	top: 25%;
+	border-radius: 5px;
+}
+.indicator {
+	position: absolute;
+	background-color: #5558fa;
+	height: 8px;
+	border-radius: 8px;
+	transition: width 0.25s ease-out;
+}
+.step_number {
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	color: #666666;
+}
